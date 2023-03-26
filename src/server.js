@@ -12,8 +12,9 @@ mongoose.connect('mongodb+srv://gurupalsingh83:1234@cluster0.n47w0wj.mongodb.net
     });
     const userRoutes = require('./routes/user_routes');
     app.use('/api/user', userRoutes);
+    
     const messageRoutes = require('./routes/message_routes');
-    app.use('/api/message', userRoutes);
+    app.use('/api/message', messageRoutes);
 
 });
 const PORT = 3000;

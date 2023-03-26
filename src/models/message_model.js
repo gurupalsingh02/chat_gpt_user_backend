@@ -5,7 +5,11 @@ const messageSchema = new Schema({
         required:true,
     },
     chatIndex:{
-        type:Int32Array,
+        type:Number,
+        required:true,
+    },
+    time:{
+        type:Number,
         required:true,
     }
 });
