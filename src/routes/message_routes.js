@@ -5,9 +5,9 @@ const { route } = require('./user_routes');
 
 router.post('/sendmessage', async (req, res) => {
     try {
-        const userId = req.body.userId;
+        const email = req.body.email;
         const messageSchema = require('../models/message_model');
-        const messageModel = mongoose.model(userId, messageSchema);
+        const messageModel = mongoose.model(email, messageSchema);
         const message = new messageModel({
             "message": req.body.message,
             "chatIndex": req.body.chatIndex,
@@ -22,9 +22,9 @@ router.post('/sendmessage', async (req, res) => {
 
 router.post('/getmessages', async (req, res) => {
     try {
-        const userId = req.body.userId;
+        const email = req.body.email;
         const messageSchema = require('../models/message_model');
-        const messageModel = mongoose.model(userId, messageSchema);
+        const messageModel = mongoose.model(email, messageSchema);
         const messages = await messageModel.find({}).sort({ time: 1});
         res.json({ success: true, message: messages });
         

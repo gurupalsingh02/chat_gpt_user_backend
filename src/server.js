@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://gurupalsingh83:1234@cluster0.n47w0wj.mongodb.net/chat_gpt_clone').then(() => {
     console.log('connected');
     app.get('/', (req, res) => {
-        res.send('ecommerce setup');
+        res.send('chat gpt app');
     });
     const userRoutes = require('./routes/user_routes');
     app.use('/api/user', userRoutes);

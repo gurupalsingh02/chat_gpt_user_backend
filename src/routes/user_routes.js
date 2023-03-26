@@ -2,9 +2,9 @@ const router = require('express').Router();
 const userModel = require('../models/user_model');
 const bcrypt = require('bcrypt');
 
-router.get('/:userId', async(req,res)=>{
-    const userId = req.params.userId;
-    const foundUser = await userModel.findOne({userId:userId});
+router.get('/:email', async(req,res)=>{
+    const email = req.params.email;
+    const foundUser = await userModel.findOne({email:email});
     if(!foundUser){
         res.json({success:false, message:'user not found'});
         return ;
